@@ -67,38 +67,49 @@ function displayEvents(events) {
 // 5. LOGIC: Checking the Answer
 function checkAnswers() {
     const playerInput = document.getElementById("player-input").value;
-    
-    // Convert the player's "5,2,3..." string into an array of numbers
-    // We subtract 1 because arrays start at 0, but your labels start at 1
     const playerIndices = playerInput.split(",").map(n => parseInt(n.trim()) - 1);
-
-    // Create the correct chronological order by sorting the round events by year
     const correctOrder = [...currentRoundEvents].sort((a, b) => a.year - b.year);
 
-    // Prepare the Results UI
     document.getElementById("game-area").style.display = "none";
     document.getElementById("results-area").style.display = "block";
     
     const correctList = document.getElementById("correct-list");
-    correctList.innerHTML = ""; // Clear previous results
+    correctList.innerHTML = "";
+    let correctCount = 0;
 
-    // Display the events in CORRECT chronological order
-    correctOrder.forEach((event) => {
-        // Find what number this event had in the random list (for player comparison)
-        const originalIndex = currentRoundEvents.indexOf(event) + 1;
+    correctOrder.forEach((event, index) => {
+        const originalIndex = currentRoundEvents.indexOf(event);
+        const playerChoiceAtThisPosition = playerIndices[index];
         
+        // Check if the player's number at this chronological spot matches the event's original label
+        const isCorrect = playerChoiceAtThisPosition === originalIndex;
+        if (isCorrect) correctCount++;
+
         const li = document.createElement("li");
+        // Apply CSS class based on accuracy
+        li.className = isCorrect ? "result-correct" : "result-incorrect";
+        
         li.innerHTML = `
-            <strong>Event #${originalIndex}:</strong> ${event.desc}
+            <strong>${isCorrect ? "✓" : "✗"} Event #${originalIndex + 1}:</strong> ${event.desc}
             <span class="date-reveal">Date: ${event.date}</span>
         `;
         correctList.appendChild(li);
     });
 
-    // Provide a basic score summary
+    // Display total score
     document.getElementById("score-summary").innerHTML = `
-        <p>Review the chronological order above and see how you did!</p>
+        <h2 style="color: ${correctCount === 10 ? '#00ff66' : '#ffcc00'}">
+            Final Score: ${correctCount} / 10
+        </h2>
+        <p>${getFeedback(correctCount)}</p>
     `;
+}
+
+function getFeedback(score) {
+    if (score === 10) return "Perfect! A master of history.";
+    if (score >= 7) return "Great job! You really know your eras.";
+    if (score >= 4) return "Not bad, but those mid-years are tricky!";
+    return "History is tough! Give it another shot.";
 }
 
 // 6. LOGIC: Resetting the Game
