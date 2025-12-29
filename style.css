@@ -1,0 +1,107 @@
+/* General Page Styling */
+body {
+    background-color: #121212; /* Deep charcoal/black */
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #00f2ff; /* Neon Cyan Border */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    text-align: center;
+}
+
+/* Typography */
+h1 {
+    color: #ff007f; /* Hot Pink */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.subtitle {
+    color: #00f2ff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Controls & Inputs */
+select, input[type="text"] {
+    background: #2a2a2a;
+    color: white;
+    border: 2px solid #555;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+input[type="text"] {
+    width: 80%;
+    border-color: #ffcc00; /* Electric Yellow */
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Buttons */
+button {
+    background-color: #00f2ff;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff007f;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Event List Styling */
+#event-list, #correct-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+#event-list li, #correct-list li {
+    background: #2a2a2a;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #ffcc00;
+    border-radius: 0 5px 5px 0;
+    font-size: 1.1rem;
+}
+
+#correct-list li {
+    border-left-color: #00ff66; /* Success Green */
+}
+
+.date-reveal {
+    display: block;
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Results Formatting */
+#results-area h2 {
+    color: #00ff66;
+}
