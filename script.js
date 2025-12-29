@@ -23,7 +23,50 @@ const eventDatabase = [
   { year: 1967, level: "medium", date: "Summer 1967", desc: "The 'Summer of Love' in San Francisco." },
   { year: 1968, level: "medium", date: "April 4, 1968", desc: "Assassination of Martin Luther King Jr." },
   { year: 1969, level: "medium", date: "July 20, 1969", desc: "Apollo 11 Moon Landing." }
-  // (You will add more events for 1970-1989 here)
+
+  // 1970s
+  { year: 1970, level: "medium", date: "April 13, 1970", desc: "An oxygen tank explodes on Apollo 13 ('Houston, we have a problem')." },
+  { year: 1970, level: "hard",   date: "January 2, 1970", desc: "The Public Health Cigarette Smoking Act is signed, banning TV cigarette ads." },
+  { year: 1971, level: "medium", date: "October 1, 1971", desc: "Walt Disney World opens in Orlando, Florida." },
+  { year: 1971, level: "hard",   date: "June 30, 1971", desc: "The 26th Amendment is ratified, lowering the voting age to 18." },
+  { year: 1972, level: "medium", date: "June 17, 1972", desc: "Five men are arrested for the break-in at the Watergate complex." },
+  { year: 1972, level: "hard",   date: "September 1, 1972", desc: "Bobby Fischer defeats Boris Spassky to become World Chess Champion." },
+  { year: 1973, level: "medium", date: "January 22, 1973", desc: "The Supreme Court issues its landmark Roe v. Wade decision." },
+  { year: 1973, level: "hard",   date: "October 10, 1973", desc: "Vice President Spiro Agnew resigns amid tax evasion charges." },
+  { year: 1974, level: "medium", date: "August 9, 1974", desc: "Richard Nixon becomes the first US President to resign." },
+  { year: 1974, level: "hard",   date: "April 8, 1974", desc: "Hank Aaron hits his 715th home run, breaking Babe Ruth's record." },
+  { year: 1975, level: "medium", date: "April 30, 1975", desc: "The Fall of Saigon marks the end of the Vietnam War." },
+  { year: 1975, level: "hard",   date: "November 20, 1975", desc: "The 'original' Saturday Night Live debuts (George Carlin hosts)." },
+  { year: 1976, level: "medium", date: "July 4, 1976", desc: "The United States celebrates its Bicentennial." },
+  { year: 1976, level: "hard",   date: "April 1, 1976", desc: "Apple Computer Company is founded by Jobs and Wozniak." },
+  { year: 1977, level: "medium", date: "May 25, 1977", desc: "Star Wars (later titled A New Hope) opens in theaters." },
+  { year: 1977, level: "hard",   date: "July 13-14, 1977", desc: "A massive blackout hits New York City, leading to widespread looting." },
+  { year: 1978, level: "medium", date: "September 17, 1978", desc: "The Camp David Accords are signed by Israel and Egypt." },
+  { year: 1978, level: "hard",   date: "November 18, 1978", desc: "The Jonestown Massacre occurs in Guyana." },
+  { year: 1979, level: "medium", date: "March 28, 1979", desc: "A partial nuclear meltdown occurs at Three Mile Island." },
+  { year: 1979, level: "hard",   date: "November 4, 1979", desc: "The Iran Hostage Crisis begins in Tehran." },
+
+  // 1980s
+  { year: 1980, level: "medium", date: "May 18, 1980", desc: "Mount St. Helens erupts in Washington state." },
+  { year: 1980, level: "hard",   date: "November 21, 1980", desc: "350 million people tune in to find out 'Who shot J.R.?' on Dallas." },
+  { year: 1981, level: "medium", date: "March 30, 1981", desc: "President Ronald Reagan is shot and wounded by John Hinckley Jr." },
+  { year: 1981, level: "hard",   date: "August 1, 1981", desc: "MTV (Music Television) launches at midnight." },
+  { year: 1982, level: "medium", date: "November 13, 1982", desc: "The Vietnam Veterans Memorial is dedicated in D.C." },
+  { year: 1982, level: "hard",   date: "September 29, 1982", desc: "The Chicago Tylenol murders begin, leading to tamper-proof packaging." },
+  { year: 1983, level: "medium", date: "June 18, 1983", desc: "Sally Ride becomes the first American woman in space." },
+  { year: 1983, level: "hard",   date: "September 1, 1983", desc: "Soviet jets shoot down KAL Flight 007, killing 269." },
+  { year: 1984, level: "medium", date: "July 28, 1984", desc: "The Summer Olympics open in Los Angeles." },
+  { year: 1984, level: "hard",   date: "December 3, 1984", desc: "The Bhopal gas tragedy occurs in India (major foreign significance)." },
+  { year: 1985, level: "medium", date: "July 13, 1985", desc: "The Live Aid concerts are held in London and Philadelphia." },
+  { year: 1985, level: "hard",   date: "November 20, 1985", desc: "Microsoft releases Windows 1.0." },
+  { year: 1986, level: "medium", date: "January 28, 1986", desc: "The Space Shuttle Challenger explodes after liftoff." },
+  { year: 1986, level: "hard",   date: "April 26, 1986", desc: "The Chernobyl nuclear disaster occurs in the Soviet Union." },
+  { year: 1987, level: "medium", date: "October 19, 1987", desc: "'Black Monday' stock market crash sees the Dow drop 22%." },
+  { year: 1987, level: "hard",   date: "June 12, 1987", desc: "Reagan challenges Gorbachev to 'Tear down this wall!' in Berlin." },
+  { year: 1988, level: "medium", date: "December 21, 1988", desc: "Pan Am Flight 103 is destroyed by a bomb over Lockerbie." },
+  { year: 1988, level: "hard",   date: "September 29, 1988", desc: "The Space Shuttle Discovery launches, the first since Challenger." },
+  { year: 1989, level: "medium", date: "November 9, 1989", desc: "The Berlin Wall is opened, allowing citizens to cross freely." },
+  { year: 1989, level: "hard",   date: "March 24, 1989", desc: "The Exxon Valdez oil spill occurs in Alaska." }
 ];
 
 // 2. GAME STATE
