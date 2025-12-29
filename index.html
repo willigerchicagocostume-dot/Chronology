@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Chronology Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>History Chronology Challenge</h1>
+        <p class="subtitle">1950 - 1989</p>
+
+        <!-- Game Setup -->
+        <div id="setup-area">
+            <label for="difficulty-select">Select Difficulty:</label>
+            <select id="difficulty-select">
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button onclick="startNewGame()">Start New Game</button>
+        </div>
+
+        <!-- Event Display -->
+        <div id="game-area" style="display:none;">
+            <p><strong>The following 10 events occurred in a consecutive 10-year period.</strong></p>
+            <p>Order them chronologically by entering their numbers separated by commas (e.g., 5,2,10...)</p>
+            
+            <ul id="event-list"></ul>
+
+            <div class="input-section">
+                <input type="text" id="player-input" placeholder="e.g. 5,2,3,9,8,10,1,4,7,6">
+                <button onclick="checkAnswers()">Submit Order</button>
+            </div>
+        </div>
+
+        <!-- Results Reveal -->
+        <div id="results-area" style="display:none;">
+            <h2>Results</h2>
+            <div id="score-summary"></div>
+            <h3>Correct Chronological Order:</h3>
+            <ul id="correct-list"></ul>
+            <button onclick="resetGame()">Play New Round</button>
+        </div>
+    </div>
+
+    <!-- Linking the script we made earlier -->
+    <script src="script.js"></script>
+</body>
+</html>
