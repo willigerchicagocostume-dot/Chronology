@@ -73,12 +73,52 @@ function displayEvents(events) {
 
 // 5. LOGIC: Checking the Answer
 function checkAnswers() {
-  const playerInput = document.getElementById("player-input").value;
-  const playerOrder = playerInput.split(",").map(n => parseInt(n.trim()) - 1);
+    const playerInput = document.getElementById("player-input").value;
+    
+    // Convert the player's "5,2,3..." string into an array of numbers
+    // We subtract 1 because arrays start at 0, but your labels start at 1
+    const playerIndices = playerInput.split(",").map(n => parseInt(n.trim()) - 1);
 
-  // Correct order is sorting the currentRoundEvents by year
-  const correctOrder = [...currentRoundEvents].sort((a, b) => a.year - b.year);
+    // Create the correct chronological order by sorting the round events by year
+    const correctOrder = [...currentRoundEvents].sort((a, b) => a.year - b.year);
 
-  // Reveal UI logic will go here...
-  console.log("Correct Order:", correctOrder);
+    // Prepare the Results UI
+    document.getElementById("game-area").style.display = "none";
+    document.getElementById("results-area").style.display = "block";
+    
+    const correctList = document.getElementById("correct-list");
+    correctList.innerHTML = ""; // Clear previous results
+
+    // Display the events in CORRECT chronological order
+    correctOrder.forEach((event) => {
+        // Find what number this event had in the random list (for player comparison)
+        const originalIndex = currentRoundEvents.indexOf(event) + 1;
+        
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <strong>Event #${originalIndex}:</strong> ${event.desc}
+            <span class="date-reveal">Date: ${event.date}</span>
+        `;
+        correctList.appendChild(li);
+    });
+
+    // Provide a basic score summary
+    document.getElementById("score-summary").innerHTML = `
+        <p>Review the chronological order above and see how you did!</p>
+    `;
 }
+
+// 6. LOGIC: Resetting the Game
+function resetGame() {
+    document.getElementById("results-area").style.display = "none";
+    document.getElementById("setup-area").style.display = "block";
+    document.getElementById("player-input").value = "";
+}
+
+// Overwriting startNewGame slightly to ensure UI transitions properly
+const originalStart = startNewGame;
+startNewGame = function() {
+    document.getElementById("setup-area").style.display = "none";
+    document.getElementById("game-area").style.display = "block";
+    originalStart(); 
+};
